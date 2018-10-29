@@ -1,5 +1,10 @@
+# `pacman` notes
+
+These notes are for the Arch Linux package manager utility `pacman`.
+
+The primary database operations can be summarized as:
 `-Q` is for the local package database, `-S` is for the sync database,
-`-F` for files database
+`-F` for files database, `-D` is for operating on the database/metadata itself
 
 + Downgrade to a cached package
 <find package in `/var/cache/pacman/pkg`>
@@ -31,7 +36,6 @@ digestible as arguments
 `pacman -Rns $(pacman -Qtdq)`
 
 + Mark a package's installation reason as explicit
-D: Operate on the package database, usually only touches local db
 This removes the package as a candidate for removal using above cmds
 `pacman -D --asexplicit pkg_name`
 Or, you can mark as a dependency to _make_ it a candidate
