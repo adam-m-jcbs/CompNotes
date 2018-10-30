@@ -189,9 +189,14 @@ then all submodules will be updated to the latest commit from the proper branch.
 However, if you change into the submodule directory you'll find you're in a
 detached HEAD state, pointing explicitly to the commit recorded by the
 superproject.  To avoid a detached HEAD, you need to configure your submodule's
-`update` option to be `merge` or `rebase`.  _Now_ a remote submodule update will finally
-get your submodule with HEAD attached to the tip of the desired branch, after
+`update` option to be `merge` or `rebase`.  _Now_ a remote submodule update will
+_sometimes_ get your submodule with HEAD attached to the tip of the desired branch, after
 either merging or rebasing the remote's changes into the local submodule repo.
+
+Even still, I often find myself with a detached HEAD, and this is scary.
+Sometimes this HEAD will be pointing to a commit ahead of, say, the `master`
+tip.  I'm still working on understanding submodule well enough to know when to
+expect a detached HEAD and how to avoid it.
 
 #### Track upstream
 [This](https://stackoverflow.com/questions/9189575/git-submodule-tracking-latest)
