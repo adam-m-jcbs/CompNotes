@@ -6,6 +6,23 @@ The primary database operations can be summarized as:
 `-Q` is for the local package database, `-S` is for the sync database,
 `-F` for files database, `-D` is for operating on the database/metadata itself
 
++ Search packages
+
+Append `-s` to `-S` to search sync database, `-Q` for local, and 
+`-F` for files in remote packages
+
+You're supposed to be able to use ERE's in `-s` queries, but wiki suggests this
+may lead to undesired results.  Yet manpage suggests I should be able to use
+regexes for `-S` and `-Q`.  To use regexes for `-F` you need to add `-x`.
+
+Examples:
+```
+$ pacman -Qs "ERE" #Search local database package names/descriptions for regex ERE
+$ pacman -Ss "ERE" #Search sync (remote) database package names/descriptions for regex ERE
+$ pacman -Fxs "ERE" #Search remote filenames for regex ERE
+$ pacman -Fs "name" #Search remote filenames for file "name"
+```
+
 + Downgrade to a cached package
 
 <find package in `/var/cache/pacman/pkg`>  
