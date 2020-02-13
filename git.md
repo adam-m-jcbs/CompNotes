@@ -2,6 +2,19 @@
 
 Various notes on aspects of git that I keep forgetting or know will be useful.
 
+## useful one-liners (you can alias, but I prefer memorizing first)
+
+```
+# Initial config
+git config --global user.email "you@email.biz"
+git config --global user.name "You There"
+
+# Create and checkout a branch
+git checkout -b new_branch
+
+# Push a new branch to remote, setting up tracking
+git push -u <remote, e.g. origin> new_branch
+```
 
 ## Submodules
 
