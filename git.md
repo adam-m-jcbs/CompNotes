@@ -14,6 +14,9 @@ git checkout -b new_branch
 
 # Push a new branch to remote, setting up tracking
 git push -u <remote, e.g. origin> new_branch
+
+# Clone from ssh server self-managed repo (lots of optional paramters included)
+git clone ssh://username@server:port/path/to/repo.git repo_dir_local
 ```
 
 ## Submodules
