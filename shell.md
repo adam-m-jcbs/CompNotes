@@ -23,7 +23,9 @@ $ df -hs /*
 ## Bash
 
 ### Important, frequently used commands / incantations
+Find a file in current dir (.)
 ```
+find . -name '*pattern*'
 ```
 
 ```
