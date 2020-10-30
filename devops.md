@@ -85,4 +85,45 @@ management of configs, offer private repos of terraform modules, etc
 
 #kubernetes
 
+## Ed V Udemy Course
 
+### Info/Reference/Support
+
++ Q&A Discussion groups
++ GitHub repo (cloned on sunha)
+
+### Sunha k8s notes
+
+### k8s deployment options (potentially conflicting, so one per system)
+
++ See procedure document in intro lecture for full details
+
+1. Local cluster on local machine, minikube
+
+2. Production cluster via Kops on AWS
+
+3. on-prem / cloud-agnostic via kubeadm (see end of course lecture)
+
+4. Managed production cluster on AWS via EKS (see end of course lecture)
+
+kops allows you to test all features and play with power,
+minikube gives local control and testbed
+
+kops is recommended by Ed V.
+
+#### Local cluster via minikube/kubectl
+
++ You can see minikube config with `cat ~/.kube/config` 
++ 8443 is default k8s api server port
+
+```
+minikube start
+kubectl create deployment <deployment name> ...
+kubectl expose deployment <deployment name> ...
+minikube service <deployment name>
+minikube stop
+minikube delete #only if things really broke
+```
+
+#### Production cluster via Kops on AWS
+See notes in edv course dir
